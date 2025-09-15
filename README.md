@@ -1,4 +1,5 @@
-# 🧑‍💻 AI Excel Mock Interviewer
+# 🧑‍💻 AI Excel Mock Interviewer 
+## Link for the app - [Click Here](https://ai-chatview.streamlit.app/)
 
 This project is a Streamlit-based web application that simulates a mock Excel interview, allowing candidates to answer real-world Excel questions and receive **automated feedback and scoring** from an AI assistant.
 
