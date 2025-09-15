@@ -181,29 +181,29 @@ Install the required libraries `streamlit` and `pyngrok`.
 
 """
 
-!pip install streamlit pyngrok -q
+# !pip install streamlit pyngrok -q
 
-"""## Run the streamlit app with ngrok
-Start the Streamlit app and expose it to the internet using ngrok.
+# """## Run the streamlit app with ngrok
+# Start the Streamlit app and expose it to the internet using ngrok.
 
-"""
+# """
 
-# Run the Streamlit app using ngrok
-from pyngrok import ngrok
-from google.colab import userdata
-import os
+# # Run the Streamlit app using ngrok
+# from pyngrok import ngrok
+# from google.colab import userdata
+# import os
 
-# Get the ngrok authtoken from Colab secrets
-NGROK_AUTH_TOKEN = userdata.get('NGROK_AUTH_TOKEN')
-ngrok.set_auth_token(NGROK_AUTH_TOKEN)
+# # Get the ngrok authtoken from Colab secrets
+# NGROK_AUTH_TOKEN = userdata.get('NGROK_AUTH_TOKEN')
+# ngrok.set_auth_token(NGROK_AUTH_TOKEN)
 
-# Get the Google API key from Colab secrets
-GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY')
+# # Get the Google API key from Colab secrets
+# GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY')
 
-# Set the environment variable for the Streamlit app
-os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
+# # Set the environment variable for the Streamlit app
+# os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
 
-public_url = ngrok.connect(8501)
-print(f"Streamlit app available at: {public_url}")
+# public_url = ngrok.connect(8501)
+# print(f"Streamlit app available at: {public_url}")
 
-!streamlit run app.py
+# !streamlit run app.py
