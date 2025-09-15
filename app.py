@@ -14,9 +14,11 @@ Create the Python code for the Streamlit app, including the Gemini API integrati
 
 # app.py
 
+
 import streamlit as st
-import google.generativeai as genai
 import os
+import subprocess
+import sys
 
 # Configure the Gemini API
 # Get your API key from environment variables
