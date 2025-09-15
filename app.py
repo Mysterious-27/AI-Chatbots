@@ -15,10 +15,26 @@ Create the Python code for the Streamlit app, including the Gemini API integrati
 # app.py
 
 
+# app.py
+
 import streamlit as st
 import os
 import subprocess
 import sys
+
+# Function to install a package
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Check if google-generativeai is installed, and install if not
+try:
+    import google.generativeai as genai
+except ImportError:
+    st.warning("Installing google-generativeai...")
+    install_package("google-generativeai")
+    import google.generativeai as genai # Try importing again after installation
+    st.success("google-generativeai installed.")
+
 
 # Configure the Gemini API
 # Get your API key from environment variables
@@ -91,11 +107,6 @@ if GOOGLE_API_KEY:
         st.success("This concludes your interview. Thank you!")
 else:
     st.warning("Please add your GOOGLE_API_KEY to Colab Secrets and restart the runtime.")
-
-"""## Save the app code to a file
-Write the generated Python code to a file named `app.py`.
-
-"""
 
 # Save the Streamlit code to a file
 with open('app.py', 'w') as f:
